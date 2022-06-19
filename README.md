@@ -85,7 +85,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+````
 
+```dart
 // Home Page
 import 'package:flutter/material.dart';
 
@@ -129,7 +131,8 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-````
+
+```
 
 ---
 <h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
@@ -143,3 +146,7 @@ class HomePage extends StatelessWidget {
 
 
 ![][codigo] 
+
+[codigo]: https://github.com/RodrigoSaymon/Dart-Fundamentos/blob/main/src/assets/Banner-4.png?raw=true
+
+[codigo2]: https://github.com/RodrigoSaymon/Dart-Fundamentos/blob/main/src/assets/Banner-2.jpg?raw=true

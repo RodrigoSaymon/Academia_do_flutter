@@ -7,34 +7,34 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Academia do Flutter'),
+        title: const Text('Academia do Flutter'),
         backgroundColor: Colors.green,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.add_link_outlined),
+            icon: const Icon(Icons.add_link_outlined),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.airplanemode_inactive_outlined),
+            icon: const Icon(Icons.airplanemode_inactive_outlined),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.airline_seat_individual_suite_rounded),
+            icon: const Icon(Icons.airline_seat_individual_suite_rounded),
           ),
         ],
       ),
-      drawer: Drawer(
+      drawer: const Drawer(
         child: Center(
           child: Text('Rodrigo'),
         ),
       ),
-      endDrawer: Drawer(
+      endDrawer: const Drawer(
         child: Center(
           child: Text('Saymon'),
         ),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Home Page'),
       ),
     );
