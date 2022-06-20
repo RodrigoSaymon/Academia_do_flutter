@@ -1,13 +1,11 @@
 ![][codigo2]
 
 
-
 <h1 align="center"> <img width="100" height = "100" src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg">
 
 **Flutter Mão na Massa - Modúlo 13** 
 
 ![][codigo]
-
 
 <p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Criação de projeto - Aula 1
 
@@ -16,7 +14,6 @@
 ```
 >flutter create nome_do_projeto
 ```
-
 
 <h1 align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">   Principai Widgets - Aula 1.1
 
@@ -55,7 +52,6 @@
 - **IconButton** – adiciona um Cotão em forma de ícone;
 
 - **Icon** – adiciona um ícone;
-
 
 <h4 p align="left">
 
@@ -143,6 +139,101 @@ class HomePage extends StatelessWidget {
 
 [<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
 
+
+![][codigo] 
+
+<h1 align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">   Container - Aula 2
+
+<h2><p align="left">
+
+- **Container** – caixa que assume as características do pai se não for definido;
+
+- **width** – largura;
+
+- **height** – altura;
+
+- **margin** *(EdeInsets)* – define largura da margem na parte externa;
+
+- **padding** *(EdeInsets)* - define largura da margem na parte interna;
+
+- **.only** – define os lados onde quero a margem *(top; left)*
+
+- **.all** – a margem é definida igualmente em todos os lados;
+
+- **.symmetric** – define a margem horizontal e vertical;
+- **.fromLTRB** – através de parâmetros obrigatórios define largura de cada margem;
+
+- **decoration** *(BoxDecoration)* - customizações de decoração;
+
+- **borderRadius** *(BorderRadius)* – formato da borda *(.circular; . horizontal.);*
+
+- **boxShadow** – permite colocar sombra ao redor do container. Aceita várias cores;
+
+- **blurRadius** - define largura da sombra;
+
+- **offset** *(Offset)* - define os lados onde quero sobra;
+
+- **SizedBox** - define espaço entre dois *widgets*;
+
+<h4 p align="left">
+
+---
+
+```dart
+// Home Page
+import 'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Academia do Flutter'),
+        backgroundColor: Colors.green,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add_link_outlined),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.airplanemode_inactive_outlined),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.airline_seat_individual_suite_rounded),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: Center(
+          child: Text('Rodrigo'),
+        ),
+      ),
+      endDrawer: Drawer(
+        child: Center(
+          child: Text('Saymon'),
+        ),
+      ),
+      body: Center(
+        child: Text('Home Page'),
+      ),
+    );
+  }
+}
+
+```
+
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
 
 
 ![][codigo] 
@@ -249,3 +340,6 @@ class HomePage extends StatelessWidget {
 [codigo]: https://github.com/RodrigoSaymon/Dart-Fundamentos/blob/main/src/assets/Banner-4.png?raw=true
 
 [codigo2]: https://github.com/RodrigoSaymon/Dart-Fundamentos/blob/main/src/assets/Banner-2.jpg?raw=true
+
+
+
