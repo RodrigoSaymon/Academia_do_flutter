@@ -15,7 +15,7 @@
 >flutter create nome_do_projeto
 ```
 
-<h1 align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">   Principai Widgets - Aula 1.1
+<h1 align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">   Principai Widgets 
 
 <h2><p align="left">
 
@@ -238,91 +238,54 @@ class HomePage extends StatelessWidget {
 
 ![][codigo] 
 
-<h1 align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">   Container - Aula 2
+<h1 align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">   Adicionar imagens Local - Aula 3
 
 <h2><p align="left">
 
-- **Container** – caixa que assume as características do pai se não for definido;
-
-- **width** – largura;
-
-- **height** – altura;
-
-- **margin** *(EdeInsets)* – define largura da margem na parte externa;
-
-- **padding** *(EdeInsets)* - define largura da margem na parte interna;
-
-- **.only** – define os lados onde quero a margem *(top; left)*
-
-- **.all** – a margem é definida igualmente em todos os lados;
-
-- **.symmetric** – define a margem horizontal e vertical;
-- **.fromLTRB** – através de parâmetros obrigatórios define largura de cada margem;
-
-- **decoration** *(BoxDecoration)* - customizações de decoração;
-
-- **borderRadius** *(BorderRadius)* – formato da borda *(.circular; . horizontal.);*
-
-- **boxShadow** – permite colocar sombra ao redor do container. Aceita várias cores;
-
-- **blurRadius** - define largura da sombra;
-
-- **offset** *(Offset)* - define os lados onde quero sobra;
-
-- **SizedBox** - define espaço entre dois *widgets*;
-
-
-<h4 p align="left">
-
----
-
-
-```dart
-// Home Page
-import 'package:flutter/material.dart';
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Academia do Flutter'),
-        backgroundColor: Colors.green,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.add_link_outlined),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.airplanemode_inactive_outlined),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.airline_seat_individual_suite_rounded),
-          ),
-        ],
-      ),
-      drawer: Drawer(
-        child: Center(
-          child: Text('Rodrigo'),
-        ),
-      ),
-      endDrawer: Drawer(
-        child: Center(
-          child: Text('Saymon'),
-        ),
-      ),
-      body: Center(
-        child: Text('Home Page'),
-      ),
-    );
-  }
-}
+**Na raiz do projeto criaremos as pastas da seguinte forma:**
 
 ```
+> assets > imagens > arquivo.png
+```
+
+**No pubspec.yaml em assets, indicaremos o caminho da imagem da seguinte forma:**
+
+```
+assets:
+  - assets / imagens / arquivo.png
+  ````
+
+**Para chamar a imagem dentro do projeto no vs code:**
+
+```dart
+Image.asset(‘assets/imagens/arquivo.png’),
+```
+
+**Adicionar imagens da Internet**
+```dart
+Image.network(‘Imagem_URL’)),
+```
+
+**Ajustes na imagem**
+
+- **Fit: BoxFit.fill** – Preenche o total de espaço disponível distorcendo a imagem;
+- **Fit: BoxFit.contain** – inclui a imagem no espaço disponível sem distorções;
+- **Fit: BoxFit.cover** – Preenche o total de espaço disponível sem distorcer;
+
+**Ajustar Tamanho da imagem**
+
+- **width: 200,** - Ajusta a largura da imagem;
+- **height: 200,** - Ajusta a altura da imagem;
+
+**Imagem como background**
+```dart
+decoration: BoxDecoration( 
+    image: DecorationImage (
+    image: AssetImage(‘assets/imagens/arquivo.png’), 
+    fit: BoxFit.cover,
+````
+       
+
 
 ---
 <h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
