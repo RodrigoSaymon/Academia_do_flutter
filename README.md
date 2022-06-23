@@ -296,6 +296,56 @@ decoration: BoxDecoration(
 
 [<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
 
+![][codigo] 
+
+
+<h1 align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">   Fontes - Aula 4
+
+<h2><p align="left">
+
+
+O Flutter suporta apenas formatos do tipo:
+
+- **.ttf**
+
+- **.otf**
+
+Podemos baixar as fontes desejadas através do site – **fonts.google.com.**
+
+**Na raiz do projeto criaremos as pastas da seguinte forma:**
+
+```
+> assets > fonts > arquivo.ttf
+```
+
+**No pubspec.yaml em assets, indicaremos o caminho da fonte da seguinte forma:**
+
+```
+Fonts:
+  -family: nome_da_fonte
+    Fonts:
+    - assets: assets/fonts/arquivo.ttf      
+  ````
+
+**Para chamar a fonte dentro do projeto no vs code:**
+
+```dart
+style: TextStyle(fontFamily: ‘nome_da_fonte’),
+```
+
+
+       
+
+
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
 
 
 ![][codigo] 
