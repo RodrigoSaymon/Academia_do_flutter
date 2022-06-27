@@ -350,6 +350,93 @@ style: TextStyle(fontFamily: ‘nome_da_fonte’),
 
 ![][codigo] 
 
+
+<h1 align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">   Navegação - Aula 5
+
+<h2><p align="left">
+
+
+Para navegar, na página principal, adiciona *‘as navegação’* ao lado do endereço de importação da home:
+```dart
+import 'home.dart' as navegacao;
+````
+
+E cria-se variáveis para receber as rotas (nomes):
+```dart
+ static const HOME = '/';
+ static const ORCAMENTO = '/orcamento';
+ static const EDITAR = '/editar';
+ ```
+
+ Com essas variáveis você consegue invocar o endereço sem erros de digitação. Após isso, define-se as rotas:
+
+ ```dart
+routes: {
+        HOME: (context) => const navegacao.Home(),
+        ORCAMENTO: (_) => const Orcamento(),
+        EDITAR: (_) => const Editar(),
+      },
+```
+
+Pode ser feito também por pagina, via home:
+
+```dart
+home: navegacao.Home(),
+```
+A navegação será feita através de botão. Pode ser por:
+- Página 
+```dart
+ Navigator.of(context).push(
+  MaterialPageRoute(
+          Settings: RouteSettings(nome:’page2’),
+          builder:(_) => Detalhes()),
+);
+```
+- Nome 
+
+```dart
+ Navigator.of(Context).pushNamed('/detalhes');
+
+ ```
+
+- Ou através das variáveis* 
+
+````dart
+Navigator.of(Context).pushNamed.Detalhes;
+````
+
+
+- **Tipos de Navegação por página:**
+- **push** – empilha as páginas;
+- **pushAndRemoveUntil** – adiciona uma nova página e remove as anteriores;
+- **phshReplacement** – Substitui uma página por uma nova página;
+
+- **Tipos de Navegação por nome:**
+- **puhNamed** – empilha as páginas;
+- **puhNamedAndRemoeUntil** - adiciona uma nova página e remove as anteriores;
+- **phshReplacementNamed** - Substitui uma página por uma nova página;
+
+**Para ambos:**
+- **popUntil** – elimina a página com alguma condição predefinida;
+- **pop** – elimina a página;
+
+
+       
+
+
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+
+
+![][codigo] 
+
 [codigo]: https://github.com/RodrigoSaymon/Dart-Fundamentos/blob/main/src/assets/Banner-4.png?raw=true
 
 [codigo2]: https://github.com/RodrigoSaymon/Dart-Fundamentos/blob/main/src/assets/Banner-2.jpg?raw=true
