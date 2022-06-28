@@ -10,6 +10,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final param =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Detalhes'),
+      ),
+      body: Center(child: Text(' o id do produto é ${param? ['id'] ?? 0}')),
+    );
+
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,

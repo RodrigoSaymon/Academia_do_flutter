@@ -396,7 +396,6 @@ A navegação será feita através de botão. Pode ser por:
 
 ```dart
  Navigator.of(Context).pushNamed('/detalhes');
-
  ```
 
 - Ou através das variáveis* 
@@ -420,7 +419,45 @@ Navigator.of(Context).pushNamed.Detalhes;
 - **popUntil** – elimina a página com alguma condição predefinida;
 - **pop** – elimina a página;
 
+---
 
+
+**Passagem de parâmetro**
+
+---
+
+
+**Inerimos um argumento que recebe um objeto:**
+
+````dart
+Navigator.of(context).push(
+  MaterialPageRoute(
+   Nome: ‘detalhes’,
+   Arguments: { ‘id’ : 20*
+           }
+   builder: (context) => Detalhes( ),
+    ),
+  );
+},
+````
+
+**Para a página receber esse parâmetro criamos uma variável final e fazemos a interpolação com um Text:**
+````dart
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final param =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Detalhes'),
+      ),
+      body: Center(child: Text(' o id do produto é ${param? ['id'] ?? 0}')),
+    );
+````
        
 
 
