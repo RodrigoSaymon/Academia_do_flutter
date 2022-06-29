@@ -60,14 +60,27 @@
 ```dart
 //main
 import 'package:flutter/material.dart';
-import '01_Home/01_home_page.dart';
+import '01_Home/MyApp.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp( const MyApp());
 }
+````
+
+```dart
+//MayApp
+import 'package:academia/01_Home/01_home_page.dart' as navegacao;
+import 'package:flutter/material.dart';
+import 'container.dart';
+import 'page_widgets.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  static const HOME = '/';
+  static const AULACONTAINER = '/Container';
+  static const PRINCIPAISWIDGETS = '/WIDGETS';
 
   @override
   Widget build(BuildContext context) {
@@ -77,57 +90,59 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      // home: const HomePage(),
+      routes: {
+        HOME: (context) => const navegacao.HomePage(),
+        AULACONTAINER: (context) => const AulaContainer(),
+        PRINCIPAISWIDGETS: (context) => const PageWidgets(),
+      },
     );
   }
 }
 ````
 
 ```dart
-// Home Page
+// Principais Widgets
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class PageWidgets extends StatelessWidget {
+  const PageWidgets({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Academia do Flutter'),
+        title: const Text('title: AppBar'),
         backgroundColor: Colors.green,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.add_link_outlined),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.airplanemode_inactive_outlined),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.airline_seat_individual_suite_rounded),
-          ),
-        ],
       ),
-      drawer: Drawer(
+      drawer: const Drawer(
         child: Center(
-          child: Text('Rodrigo'),
+          child: Text('Drawer'),
         ),
       ),
-      endDrawer: Drawer(
+      endDrawer: const Drawer(
         child: Center(
-          child: Text('Saymon'),
+          child: Text('endDrawer'),
         ),
       ),
       body: Center(
-        child: Text('Home Page'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            const Text('body'),
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const Icon(Icons.abc_outlined),
+            ),
+            const Icon(Icons.ac_unit_sharp),
+          ],
+        ),
       ),
     );
   }
 }
-
 ```
 
 ---
@@ -223,8 +238,78 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
 ```
+
+````dart
+//Container
+import 'package:flutter/material.dart';
+
+class AulaContainer extends StatelessWidget {
+  const AulaContainer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: const Text('Aula de Container'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              width: 200,
+              height: 200,
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(bottom: 10, top: 10),
+              decoration: BoxDecoration(
+                color: Colors.teal,
+                borderRadius: BorderRadius.circular(50),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.red,
+                    blurRadius: 20,
+                    offset: Offset(10, 10),
+                  ),
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 20,
+                    offset: Offset(-10, -10),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              width: 200,
+              height: 200,
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(bottom: 10, top: 10),
+              decoration: BoxDecoration(
+                color: Colors.teal,
+                borderRadius: BorderRadius.circular(50),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.red,
+                    blurRadius: 20,
+                    offset: Offset(10, 10),
+                  ),
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 20,
+                    offset: Offset(-10, -10),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+````
 
 ---
 <h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
