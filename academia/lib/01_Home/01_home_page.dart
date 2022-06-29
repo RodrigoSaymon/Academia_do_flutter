@@ -1,3 +1,4 @@
+import 'package:academia/01_Home/Images_fonts.dart';
 import 'package:academia/01_Home/container.dart';
 import 'package:academia/01_Home/page_widgets.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,13 @@ class HomePage extends StatelessWidget {
             icon: const Icon(Icons.airplanemode_inactive_outlined),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+               Navigator.of(context).push(
+                MaterialPageRoute(
+                    settings: const RouteSettings(name: 'imagensFonts'),
+                    builder: (_) => const ImagesFonts()),
+              );
+            },
             icon: const Icon(Icons.airline_seat_individual_suite_rounded),
           ),
         ],
@@ -48,8 +55,14 @@ class HomePage extends StatelessWidget {
           child: Text('Saymon'),
         ),
       ),
-      body: const Center(
-        child: Text('Home Page'),
+      body: Center(
+        child: Container(
+          child: const Text('Home', 
+          style: TextStyle(
+            fontSize: 50,
+            fontWeight: FontWeight.bold,
+          ),),
+        ),
       ),
     );
   }
