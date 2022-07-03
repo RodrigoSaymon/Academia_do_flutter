@@ -1,6 +1,7 @@
 import 'package:academia/01_Home/01_home_page.dart' as navegacao;
 import 'package:flutter/material.dart';
 import 'Images_fonts.dart';
+import 'Listview_page.dart';
 import 'container.dart';
 import 'page_widgets.dart';
 
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   static const AULACONTAINER = '/Container';
   static const PRINCIPAISWIDGETS = '/WIDGETS';
   static const IMAGENSFONTES = '/ImagesFonts';
+  static const LISTVIEWPAGE = '/ListviewPage';
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,8 @@ class MyApp extends StatelessWidget {
         HOME: (context) => const navegacao.HomePage(),
         AULACONTAINER: (context) => const AulaContainer(),
         PRINCIPAISWIDGETS: (context) => const PageWidgets(),
-        IMAGENSFONTES: (context) => const ImagesFonts(),
+        IMAGENSFONTES : (context) => const  ImagesFonts(),
+        LISTVIEWPAGE: (context) => const ListviewPage(),
       },
     );
   }
