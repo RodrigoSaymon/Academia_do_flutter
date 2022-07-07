@@ -50,10 +50,10 @@ class HomePage extends StatelessWidget {
               case PopupMenuPages.ImagensFonts:
                 Navigator.of(context).pushNamed(MyApp.IMAGENSFONTES);
                 break;
-                case PopupMenuPages.ListviewPage:
+              case PopupMenuPages.ListviewPage:
                 Navigator.of(context).pushNamed(MyApp.LISTVIEWPAGE);
                 break;
-                 case PopupMenuPages.PageWidgets:
+              case PopupMenuPages.PageWidgets:
                 Navigator.of(context).pushNamed(MyApp.PRINCIPAISWIDGETS);
                 break;
             }
@@ -63,16 +63,15 @@ class HomePage extends StatelessWidget {
                 value: PopupMenuPages.Container,
                 child: Text('Container'),
               ),
-              
               PopupMenuItem<PopupMenuPages>(
                 value: PopupMenuPages.ImagensFonts,
                 child: Text('ImagesFonts'),
               ),
-                  PopupMenuItem<PopupMenuPages>(
+              PopupMenuItem<PopupMenuPages>(
                 value: PopupMenuPages.ListviewPage,
                 child: Text('ListviewPage'),
               ),
-               PopupMenuItem<PopupMenuPages>(
+              PopupMenuItem<PopupMenuPages>(
                 value: PopupMenuPages.PageWidgets,
                 child: Text('PageWidgets'),
               ),
@@ -114,3 +113,27 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+// class ItemAdd extends StatefulWidget {
+//   var newTaskCtrl = TextEditingController();
+
+
+//   ItemAdd({Key? key}) : super(key: key);
+  
+//   @override
+//   State<StatefulWidget> createState() {
+    
+//   void add(){
+//     setState()
+
+
+//   }
+
+
+//     // TODO: implement createState
+//     throw UnimplementedError();
+//   }
+  
+  
+  // }
+
